@@ -1,0 +1,21 @@
+#Default Kibana configuration for opendistro
+
+elasticsearch.url: https://localhost:9200
+elasticsearch.ssl.verificationMode: none
+elasticsearch.username: kibanaserver
+elasticsearch.password: kibanaserver
+elasticsearch.requestHeadersWhitelist: ["securitytenant","Authorization"]
+
+opendistro_security.multitenancy.enabled: false
+opendistro_security.multitenancy.tenants.preferred: ["Private", "Global"]
+opendistro_security.readonly_mode.roles: ["kibana_read_only"]
+
+server.port: 5601
+server.host: "0.0.0.0"
+server.name: "ELK01"
+elasticsearch.preserveHost: true
+kibana.index: ".kibana"
+kibana.defaultAppId: "discover"
+
+elasticsearch.requestTimeout: 930000
+elasticsearch.shardTimeout: 930000
